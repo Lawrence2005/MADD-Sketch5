@@ -1,6 +1,3 @@
-// visual.js
-// Person 2: AOL search data → chargrid → visual digital shadow
-
 const COLS = 90;
 const ROWS = 42;
 
