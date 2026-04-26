@@ -121,7 +121,6 @@ function drawFrame() {
     currentEvent
   };
 
-  // Send a signal that Person 3 can use for sound.
   if (frame % 8 === 0) {
     window.dispatchEvent(
       new CustomEvent("aol-search-step", {
