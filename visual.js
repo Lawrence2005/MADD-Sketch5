@@ -36,7 +36,7 @@ function initVisuals() {
   createGrid();
   initLifeGrid();
 
-  setInterval(drawFrame, 50); // about 20 FPS
+  setInterval(drawFrame, 33); // about 20 FPS
 }
 
 function prepareEvents() {
@@ -102,17 +102,17 @@ function initLifeGrid() {
 function drawFrame() {
   frame++;
 
-  const f = Math.floor(frame * 0.25);
+  const f = Math.floor(frame * 0.75);
   const t = f * 0.05;
 
   currentEvent = events[f % events.length];
 
   // Every few frames, inject the current AOL search into the memory grid.
-  if (frame % 8 === 0) {
+  if (frame % 4 === 0) {
     injectSearchIntoGrid(currentEvent);
   }
 
-  if (frame % 3 === 0) {
+  if (frame % 2 === 0) {
     stepLifeGrid();
   }
 
@@ -127,7 +127,7 @@ function drawFrame() {
     currentEvent
   };
 
-  if (frame % 8 === 0) {
+  if (frame % 4 === 0) {
     window.dispatchEvent(
       new CustomEvent("aol-search-step", {
         detail: {
